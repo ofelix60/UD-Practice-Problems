@@ -12,7 +12,7 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 		.toString()
 		.split(/\n/)
 		.forEach(word => {
-			if (word.includes('GHTLY')) {
+			if (word.endsWith('GHTLY')) {
 				result.push(word);
 			}
 		});
