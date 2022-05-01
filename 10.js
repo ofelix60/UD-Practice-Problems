@@ -7,6 +7,9 @@ const result = [];
 const allVowelsUsed = [];
 const vowels = ['A', 'E', 'I', 'O', 'U'];
 
+
+
+
 fs.readFile(sowpods, 'utf8', (err, data) => {
 	if (err) console.log(err.message);
 
@@ -24,26 +27,18 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 				allVowelsUsed.push(word);
 			}
 		});
-	console.log(result);
-	console.log(allVowelsUsed);
 
 	allVowelsUsed.forEach(word => {
-		let vowel = [];
-
-		// this loops through all words in array
-		for (let i = 0; word.length > i; i++) {
-			// this loops through letters in word
-			for (let j = 0; vowels.length > j; j++) {
-				// checks for vowels in words
-				if (word[i].includes(vowels[j])) {
-					// stores vowels in array
-					vowel.push(word[i]);
-				}
+		let vowelsInWord = []
+		for (let letter of word) {
+			// if the letter is a vowel
+			if (vowels.includes(letter)) {
+				// append the vowel to the array
+				vowelsInWord.push(letter);
 			}
+			if (JSON.stringify(vowels) === JSON.stringify(vowelsInWord)) result.push(word);
 		}
-		// compares arrays
-		if (JSON.stringify(vowels) === JSON.stringify(vowel)) result.push(word);
 	});
-
 	console.log(result);
-});
+})
+
