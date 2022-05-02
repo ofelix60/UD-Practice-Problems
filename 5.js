@@ -12,7 +12,7 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 		.toString()
 		.split(/\n/)
 		.forEach(word => {
-			if (!word.includes('E') && !word.includes('A') && word.length >= 15) {
+			if (word.length >= 15 && !word.includes('E') && !word.includes('A')) {
 				result.push(word);
 			}
 		});
