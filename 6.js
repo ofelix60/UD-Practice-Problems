@@ -12,7 +12,7 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 		.toString()
 		.split(/\n/)
 		.forEach(word => {
-			if (word.includes('B') && word.includes('X') && word.length < 5) {
+			if (word.length < 5 && word.includes('B') && word.includes('X')) {
 				result.push(word);
 			}
 		});
