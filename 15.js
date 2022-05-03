@@ -4,9 +4,9 @@ const fs = require('fs');
 
 const sowpods = 'sowpods.txt';
 const result = [];
-let q = '';
-let x = '';
-let z = '';
+let q = 0;
+let x = 0;
+let z = 0;
 
 fs.readFile(sowpods, 'utf8', (err, data) => {
 	if (err) console.log(err.message);
