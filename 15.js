@@ -15,8 +15,7 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 		.toString()
 		.split(/\n/)
 		.forEach(word => {
-			for (let i = 0; i < word.length; i++) {
-				const letter = word[i];
+			for (letter of word) {
 				if (letter.includes('Q')) {
 					q++;
 				} else if (letter.includes('X')) {
