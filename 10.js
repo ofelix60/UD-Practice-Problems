@@ -36,8 +36,8 @@ fs.readFile(sowpods, 'utf8', (err, data) => {
 				// append the vowel to the array
 				vowelsInWord.push(letter);
 			}
-			if (JSON.stringify(vowels) === JSON.stringify(vowelsInWord)) result.push(word);
 		}
+			if (JSON.stringify(vowels) === JSON.stringify(vowelsInWord)) result.push(word);
 	});
 	console.log(result);
 })
